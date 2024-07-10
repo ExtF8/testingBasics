@@ -1,0 +1,14 @@
+{
+  "name": "testingbasics",
+  "version": "1.0.0",
+  "description": "Test Driven Development Practice ",
+  "main": "testing.playground.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
