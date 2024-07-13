@@ -95,39 +95,24 @@ function shiftCharacter(character, shift) {
     return shiftedCharacter;
 }
 
+// Takes array as a input, analyzes and returns object
 function analyzeArray(arr) {
+    // Initiate empty object
     let object = {};
 
-    object.length = arr.length;
-
-    //
-    let largest = 0;
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > largest) {
-            largest = arr[i];
-        }
-    }
-    object.max = largest;
-
-    //
-    let lowest = arr[0];
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] < lowest) {
-            lowest = arr[i];
-            console.log(lowest);
-        }
-    }
-    object.min = lowest;
-
-    //
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        sum += arr[i];
-    }
+    // Calculate values from array
+    let sum = arr.reduce((acc, num) => acc + num, 0);
     let average = sum / arr.length;
-    object.average = average;
+    let minValue = Math.min(...arr);
+    let maxValue = Math.max(...arr);
+    let arrayLength = arr.length;
 
-    console.log(object);
+    // Add key value pairs to object
+    object.average = average;
+    object.min = minValue;
+    object.max = maxValue;
+    object.length = arrayLength;
+
     return object;
 }
 
