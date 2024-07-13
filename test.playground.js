@@ -95,4 +95,47 @@ function shiftCharacter(character, shift) {
     return shiftedCharacter;
 }
 
-export { sum, capitalize, reverseString, calculatorObject, caesarCipher };
+function analyzeArray(arr) {
+    let object = {};
+
+    object.length = arr.length;
+
+    //
+    let largest = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > largest) {
+            largest = arr[i];
+        }
+    }
+    object.max = largest;
+
+    //
+    let lowest = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < lowest) {
+            lowest = arr[i];
+            console.log(lowest);
+        }
+    }
+    object.min = lowest;
+
+    //
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    let average = sum / arr.length;
+    object.average = average;
+
+    console.log(object);
+    return object;
+}
+
+export {
+    sum,
+    capitalize,
+    reverseString,
+    calculatorObject,
+    caesarCipher,
+    analyzeArray,
+};
