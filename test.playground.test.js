@@ -4,6 +4,7 @@ import {
     reverseString,
     calculatorObject,
     caesarCipher,
+    analyzeArray,
 } from './test.playground';
 
 test('adds 1 + 2 to equal 3', () => {
@@ -85,5 +86,29 @@ describe('Caesar Cipher', () => {
     test('handling negative shift values', () => {
         expect(caesarCipher('abc', -1)).toBe('zab');
         expect(caesarCipher('ABC', -2)).toBe('YZA');
+    });
+});
+
+describe.only('Analyze array', () => {
+    const arr = [1, 8, 3, 4, 2, 6, 7, 10, 12];
+    const data = analyzeArray(arr);
+
+    let sum = arr.reduce((acc, num) => acc + num, 0);
+    let average = sum / arr.length;
+
+    test('length', () => {
+        expect(data.length).toEqual(arr.length);
+    });
+
+    test('max', () => {
+        expect(data.max).toEqual(Math.max(...arr));
+    });
+
+    test('min', () => {
+        expect(data.min).toEqual(Math.min(...arr));
+    });
+
+    test('average', () => {
+        expect(data.average).toEqual(average);
     });
 });
