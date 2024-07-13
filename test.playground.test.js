@@ -18,21 +18,30 @@ test('reversed string', () => {
     expect(reverseString('text')).toMatch('txet');
 });
 
-describe('calculator Object', () => {
-    test('calculator methods', () => {
+describe('Calculator Object methods', () => {
+    test('add method', () => {
         expect(calculatorObject.add(1, 2)).toBe(3);
+    });
+
+    test('subtract method', () => {
         expect(calculatorObject.subtract(4, 2)).toBe(2);
-        expect(calculatorObject.divide(12, 3)).toBe(4);
+    });
+
+    test('multiply method', () => {
         expect(calculatorObject.multiply(4, 4)).toBe(16);
+    });
+
+    test('divide method', () => {
+        expect(calculatorObject.divide(12, 3)).toBe(4);
     });
 });
 
-describe('caesar Cipher', () => {
+describe('Caesar Cipher', () => {
     test('shifts letters by the given factor', () => {
         expect(caesarCipher('abc', 1)).toBe('bcd');
         expect(caesarCipher('xyz', 2)).toBe('zab');
-        expect(caesarCipher('ABC', 1)).toBe('BCD');
-        expect(caesarCipher('XYZ', 2)).toBe('ZAB');
+        expect(caesarCipher('ABC', 3)).toBe('DEF');
+        expect(caesarCipher('XYZ', 4)).toBe('BCD');
     });
 
     test('shifting uppercase letters', () => {
@@ -43,7 +52,7 @@ describe('caesar Cipher', () => {
         expect(caesarCipher('xyz', 3)).toBe('abc');
     });
 
-    test('wrapping uppercase from a to z', () => {
+    test('wrapping uppercase from A to Z', () => {
         expect(caesarCipher('XYZ', 3)).toBe('ABC');
     });
 
@@ -75,6 +84,6 @@ describe('caesar Cipher', () => {
 
     test('handling negative shift values', () => {
         expect(caesarCipher('abc', -1)).toBe('zab');
-        expect(caesarCipher('ABC', -1)).toBe('ZAB');
+        expect(caesarCipher('ABC', -2)).toBe('YZA');
     });
 });
