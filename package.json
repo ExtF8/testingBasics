@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Test Driven Development Practice ",
   "main": "testing.playground.js",
+  "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "watch": "jest --watch *.js"
   },
   "author": "",
   "license": "ISC",
