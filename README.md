@@ -42,13 +42,28 @@ This project is part of [The Odin Project](https://www.theodinproject.com/lesson
 
 ## How to Run Locally
 
-- Clone the Repository:
-  - git clone `git@github.com:ExtF8/testingBasics.git`
-  - cd testingBasics
+1. **Clone the Repository**:
 
-- Install Dependencies:
-  - npm install
+    ```bash
+    git clone git@github.com:ExtF8/testingBasics.git
+    cd testingBasics
+    ```
 
-- Run Tests:
-  - npm test
-  - npm run watch
+2. **Install Dependencies**:
+
+    ```bash
+    npm install
+    ```
+
+3. **Run Tests**:
+    - To run the tests:
+
+    ```bash
+    npm test
+    ```
+
+    - To run the tests in watch mode:
+
+    ```bash
+    npm run watch
+    ```
